@@ -8,15 +8,15 @@ that can be driven / tested by the cocotb test.py
 
 // copy parameters to tb.v, ttfir.v, test.py
 // as files may be used individually
-module tb #(parameter N_TAPS = 5,
+module tb #(parameter N_TAPS = 1,
                       BW_in = 6,
                       BW_out = 8
     )
     (
     input clk,
     input rst,
-    input [BW_in - 1:0] x_in,
-    output [BW_out - 1:0] y_out
+    input signed [BW_in - 1:0] x_in,
+    output signed [BW_out - 1:0] y_out
    );
 
     // this part dumps the trace to a vcd file that can be viewed with GTKWave
